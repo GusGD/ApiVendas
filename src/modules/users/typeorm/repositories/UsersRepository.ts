@@ -5,21 +5,21 @@ import User from '../entities/User';
 export default class UsersRepository extends Repository<User> {
   public async findByName(name: string): Promise<User | undefined> {
     const user = this.findOne({
-      name,
+      where: { name },
     });
     return user;
   }
 
   public async findById(id: string): Promise<User | undefined> {
     const user = this.findOne({
-      id,
+      where: { id },
     });
     return user;
   }
 
   public async findByEmail(email: string): Promise<User | undefined> {
     const user = await this.findOne({
-      email,
+      where: { email },
     });
     return user;
   }
