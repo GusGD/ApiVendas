@@ -6,19 +6,16 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('products') //table for mapping
-class Product {
+@Entity('customers') //table for mapping
+class Customer {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @Column('decimal')
-  price: number;
-
-  @Column('int')
-  quantity: number;
+  @Column()
+  email: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -26,4 +23,4 @@ class Product {
   @UpdateDateColumn()
   updated_at: Date;
 }
-export default Product;
+export default Customer;
